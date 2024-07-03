@@ -1,0 +1,18 @@
+[package]
+name = "T004_gyroscope_example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rusty-macros = { path = "../rusty-macros", version = "=0.1.0" }
+rusty-rt = { path = "../rusty-rt", version = "=0.1.0" }
+rusty-peripheral = { path = "../rusty-peripheral", version = "=0.1.0" }
+register = { path = "../register/register", version = "=0.1.0" }
+log = "0.4.22"
+
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "z"  # Optimize for size.
+lto = true
